@@ -74,6 +74,8 @@ var Game = (() => {
    */
   function getCanvasCoordinates(event, canvas) {
     rect = canvas.getBoundingClientRect();
+    console.log("rect", rect);
+    console.log("mouse", event);
     return {
       x: Math.round(
         ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width

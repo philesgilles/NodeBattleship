@@ -123,6 +123,7 @@
   height: 95px;
   overflow-y: scroll;
   margin-top: 5px;
+  border: 1px solid rgb(150, 177, 247);
 }
 
 #messages {
@@ -143,7 +144,7 @@
 }
 
 .list-group-item {
-  border-color: #ccc;
+  border: none;
 }
 
 .form-control:focus {

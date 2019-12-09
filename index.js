@@ -97,7 +97,7 @@ io.on("connection", function(socket) {
     if (users[socket.id].inGame !== null) {
       leaveGame(socket);
 
-      socket.join("waiting room");
+      socket.join("waitingRoom");
       joinWaitingPlayers();
     }
   });
@@ -123,7 +123,7 @@ io.on("connection", function(socket) {
  */
 function joinWaitingPlayers() {
   var players = getClientsInRoom("waitingRoom");
-  if (players.length >= 2) {
+  if (players.length >= 2 && players.length % 2 === 0) {
     // 2 player waiting. Create new game!
     var game = new BattleshipGame(
       gameIdCounter++,
