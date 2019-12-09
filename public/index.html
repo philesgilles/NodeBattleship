@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Battleship - Game</title>
+    <link rel="icon" type="image/png" href="img/target.png" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--  -->
+    <!--Navbar-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark primary-color mb-4 d-flex justify-content-center"
+    >
+      <a class="navbar-brand" href="#">Battleship</a>
+    </nav>
+    <div class="container">
+      <!--  -->
+      <!-- Disconnected alert -->
+
+      <div id="disconnected">
+        <div class="row vertical-center-row">
+          <div class="col-sm">
+            <div class="alert alert-danger text-center" role="alert">
+              You are disconnected, Is your browser supporting websockets ?
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!-- Waiting zone  -->
+      <div id="waitingRoom" style="display:none">
+        <div class="row mt-4">
+          <div class="col-sm">
+            <div class="card text-center">
+              <div class="card-header">
+                Waiting Room
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">You are connected to the server.</h5>
+                <!-- LOADER SPINNER -->
+                <div class="lds-roller">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+                <p class="card-text">
+                  Waiting for an other player...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!-- PlayZone -->
+      <div id="game" style="display:none;">
+        <div class="row">
+          <div class="col-12">
+            <div class="card text-center">
+              <div class="card-header">
+                Game #<span id="game-number"></span>
+              </div>
+              <div class="card-body">
+                <div class="row d-flex justify-content-center">
+                  <div class="col-8 mb-2">
+                    <ul class="list-group">
+                      <li
+                        class="list-group-item text-center rounded-pill"
+                        id="turn-status"
+                      ></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6 player-grid text-center">
+                    <h3>You</h3>
+                    <canvas id="PlayerCanvas" width="361" height="361"
+                      >Browser does not support canvas.</canvas
+                    >
+                  </div>
+                  <div class="col-md-6 player-grid text-center">
+                    <h3>Opponent</h3>
+                    <canvas id="OpponentCanvas" width="361" height="361"
+                      >Browser does not support canvas.</canvas
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- HERE GOES THE  CHAT -->
+              <ul class="list-group text-left">
+                <li class="chatTitle">CHAT :</li>
+                <!-- Chat messages -->
+                <li class="list-group-item mx-4 mb-4" id="messages-list">
+                  <ul id="messages"></ul>
+                </li>
+
+                <!-- Send chat message form -->
+                <li class="list-group-item">
+                  <form id="message-form" action="">
+                    <div class="input-group d-flex align-items-center">
+                      <input
+                        id="message"
+                        class="form-control"
+                        autocomplete="off"
+                      />
+                      <div class="input-group-btn">
+                        <button class="btn btn-primary">Send Message</button>
+                      </div>
+                    </div>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!-- IMPORT ALL JS  -->
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/socketClient.js"></script>
+  </body>
+</html>
