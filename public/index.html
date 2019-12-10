@@ -29,7 +29,7 @@
     <nav
       class="navbar navbar-expand-lg navbar-dark primary-color mb-4 d-flex justify-content-center"
     >
-      <a class="navbar-brand" href="#">Battleship</a>
+      <img src="img/logo.png" width="300" alt="logo" />
     </nav>
     <div class="container">
       <!--  -->
@@ -51,7 +51,7 @@
           <div class="col-sm">
             <div class="card text-center">
               <div class="card-header">
-                Waiting Room
+                Lobby
               </div>
               <div class="card-body">
                 <h5 class="card-title">You are connected to the server.</h5>
@@ -67,7 +67,7 @@
                   <div></div>
                 </div>
                 <p class="card-text">
-                  Waiting for an other player...
+                  Waiting for an other player to start the game...
                 </p>
               </div>
             </div>
@@ -94,14 +94,14 @@
                     </ul>
                   </div>
                   <div class="col-md-6 player-grid text-center">
-                    <h3>You</h3>
-                    <canvas id="PlayerCanvas" width="361" height="361"
+                    <h3>Opponent</h3>
+                    <canvas id="OpponentCanvas" width="361" height="361"
                       >Browser does not support canvas.</canvas
                     >
                   </div>
                   <div class="col-md-6 player-grid text-center">
-                    <h3>Opponent</h3>
-                    <canvas id="OpponentCanvas" width="361" height="361"
+                    <h3>You</h3>
+                    <canvas id="PlayerCanvas" width="361" height="361"
                       >Browser does not support canvas.</canvas
                     >
                   </div>
@@ -109,9 +109,9 @@
               </div>
               <!-- HERE GOES THE  CHAT -->
               <ul class="list-group text-left">
-                <li class="chatTitle">CHAT :</li>
+                <li class="chatTitle">Chat :</li>
                 <!-- Chat messages -->
-                <li class="list-group-item mx-4 mb-4" id="messages-list">
+                <li class="list-group-item mx-4 mb-4 p-2" id="messages-list">
                   <ul id="messages"></ul>
                 </li>
 

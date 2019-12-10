@@ -1,3 +1,43 @@
+nav {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#999999+0,1c8496+0,7db9e8+69,7db9e8+69,207cca+99 */
+  background: #999999; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #d7e5f5 0%,
+    #98b7da 79%,
+    #18639d 83%,
+    #0d3f6a 99%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #d7e5f5 0%,
+    #98b7da 79%,
+    #18639d 83%,
+    #0d3f6a 99%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #d7e5f5 0%,
+    #98b7da 79%,
+    #18639d 83%,
+    #0d3f6a 99%
+  );
+}
+
+body {
+  background: #0d3f6a;
+}
+
+.card {
+  background: #e2ebf2;
+}
+
+canvas {
+  box-shadow: 0 0 5px rgb(121, 121, 121);
+}
+
 /* SPINNER LOADER */
 
 .lds-roller {
@@ -88,25 +128,25 @@
 .alert-your-turn {
   color: #31708f;
   background-color: #bce8f1;
-  border: 2px solid #31708f;
+  border: 1px solid #31708f;
 }
 
 .alert-opponent-turn {
   color: #886528;
-  background-color: #f2d49f;
+  background-color: #ffe9c8;
   border-color: #886528;
 }
 
 .alert-winner {
   color: #3c763d;
   background-color: #dff0d8;
-  border-color: #d6e9c6;
+  border-color: #3c763d;
 }
 
 .alert-loser {
   color: #a94442;
   background-color: #f2dede;
-  border-color: #ebccd1;
+  border-color: #a94442;
 }
 
 .btn-primary:hover {
@@ -117,6 +157,11 @@
 .chatTitle {
   list-style: none;
   padding-left: 25px;
+}
+
+#message {
+  margin: 0 20px 0 5px;
+  box-shadow: 0 0 6px #00000020;
 }
 
 #messages-list {
@@ -144,7 +189,7 @@
 }
 
 .list-group-item {
-  border: none;
+  border-color: none;
 }
 
 .form-control:focus {

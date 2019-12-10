@@ -45,8 +45,16 @@ $(function() {
    * Game chat message
    */
   socket.on("chat", function(msg) {
+    let color = "danger";
+    if (msg.name === "Me") {
+      color = "primary";
+    }
     $("#messages").append(
-      "<li><strong>" + msg.name + ":</strong> " + msg.message + "</li>"
+      `<li><strong><span class='badge badge-${color} px-2'>` +
+        msg.name +
+        " : </span></strong> " +
+        msg.message +
+        "</li>"
     );
     $("#messages-list").scrollTop($("#messages-list")[0].scrollHeight);
   });

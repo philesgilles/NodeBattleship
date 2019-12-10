@@ -74,8 +74,6 @@ var Game = (() => {
    */
   function getCanvasCoordinates(event, canvas) {
     rect = canvas.getBoundingClientRect();
-    console.log("rect", rect);
-    console.log("mouse", event);
     return {
       x: Math.round(
         ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width
@@ -138,12 +136,12 @@ var Game = (() => {
         $("#turn-status")
           .removeClass("alert-opponent-turn")
           .addClass("alert-your-turn")
-          .html("It's your turn!");
+          .html("Your turn!");
       } else {
         $("#turn-status")
           .removeClass("alert-your-turn")
           .addClass("alert-opponent-turn")
-          .html("Waiting for opponent.");
+          .html("Opponent's turn... please wait");
       }
     }
   }
@@ -188,7 +186,7 @@ var Game = (() => {
   function drawSquares(gridIndex) {
     var i, j, squareX, squareY;
 
-    context[gridIndex].fillStyle = "#222222";
+    context[gridIndex].fillStyle = "#31708f";
     context[gridIndex].fillRect(0, 0, gridWidth, gridHeight);
 
     for (i = 0; i < gridRows; i++) {
@@ -196,7 +194,7 @@ var Game = (() => {
         squareX = j * (squareWidth + gridBorder) + gridBorder;
         squareY = i * (squareHeight + gridBorder) + gridBorder;
 
-        context[gridIndex].fillStyle = "#7799FF";
+        context[gridIndex].fillStyle = "#bce8f1";
 
         // Highlight square if it's user's turn and user hovers over an unfired on, opponent square.
         if (
