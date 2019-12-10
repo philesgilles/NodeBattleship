@@ -15,6 +15,7 @@ var port = 8900;
 var users = {};
 var gameIdCounter = 1;
 
+// Setup static serve
 app.use(express.static(__dirname + "/public"));
 
 http.listen(port, function() {
@@ -29,7 +30,6 @@ io.on("connection", function(socket) {
     inGame: null,
     player: null
   };
-  //console.log(users);
   // join waiting room until there are enough players to start a new game
   socket.join("waitingRoom");
   /**
@@ -63,7 +63,6 @@ io.on("connection", function(socket) {
    * Handle shot from client
    */
   socket.on("shot", function(position) {
-    console.log(position);
     var game = users[socket.id].inGame,
       opponent;
 
